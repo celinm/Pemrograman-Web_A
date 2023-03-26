@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>UTS P.Web</title>
+    <style>
+        footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                font-size: 25px;
+                color:#000000;
+                background-color: #0863ca;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+        }
+        header {
+                top: 0;
+                width: 100%;
+                font-size: 30px;
+                color:#000000;
+                background-color: #0863ca;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+        }
+        html {
+                overflow-x: hidden;
+                width: 100%;
+                height: 100%;
+                background-color: #7bb8ff;
+        }
+    
+        p {
+           font-size:20px; 
+        }
+
+    </style>
+	</head>
+
+	<body>
+        <div align="center">
+            <header><b>Menu Penjualan</b></header>
+        </div>
+            <div class="menu">
+                <a href = "index.html"> Menu Utama</a> <br>
+                <a href = "penjualan.html"> Penjualan</a> <br>
+                <a href = "tentang.html"> Tentang Saya</a>
+            </div>
+        
+            <div align="center">
+                <form>
+                    <label for="nama">Nama Barang:</label>
+                    <input type="text" id="nama" name="nama"><br><br>
+                    <label for="harga">Harga Barang:</label>
+                    <input type="number" id="harga" name="harga" onchange="hitungTotal()"><br><br>
+                    <label for="jumlah">Jumlah Barang:</label>
+                    <input type="number" id="jumlah" name="jumlah" onchange="hitungTotal()"><br><br>
+
+                    <button onclick="Hitung(event)" type="submit">Hitung</button> <br><br>
+                    <hr width="70%" align="center" color="gray">
+                    <label for="nama"><b>Nama Barang: <span id="nama1"></span></b></label><br><br>
+                    <label for="harga"><b>Harga Barang: <span id="harga1"></span></b></label><br><br>
+                    <label for="jumlah"><b>Jumlah Beli: <span id="jumlah1"></span></b></label><br><br>
+                    <p>
+                    <label for="total"><b>Total Bayar: <span id="total"></span></b></label>
+                    </p>
+                </form>
+            </div>
+            
+            <footer> 20101106002 - CELIN MANONGKO - A </footer>
+        
+            <script>
+                function Hitung(event) {
+                    var nama = document.getElementById("nama").value;
+                    var harga = document.getElementById("harga").value;
+                    var jumlah = document.getElementById("jumlah").value;
+                    var sum = harga * jumlah;
+                    document.getElementById('nama1').innerText = nama;
+                    document.getElementById('harga1').innerText = harga;
+                    document.getElementById('jumlah1').innerText = jumlah;
+                    document.getElementById('total').innerText = sum;
+                    event.preventDefault()
+                }
+            </script>
+	</body>
+</html>
